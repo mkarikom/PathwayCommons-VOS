@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+    virtuoso_db:
+        container_name: Virtuoso-7.2.8_PathwayCommons-12
+        environment:
+            - DBA_PASSWORD=dba
+            - VIRT_Parameters_ServerThreads=100
+            - VIRT_Parameters_NumberOfBuffers=5000000
+            - VIRT_Parameters_DefaultIsolation=2
+            - VIRT_Parameters_MaxMemPoolSize=100000000
+            - VIRT_Parameters_AdjustVectorSize=1
+            - VIRT_Parameters_ThreadsPerQuery=32
+            - VIRT_Parameters_AsyncQueueMaxThreads=32
+            - VIRT_Parameters_MaxQueryMem=30G
+            - VIRT_Parameters_HashJoinSpace=30G
+        ports:
+            - "1111:1111"
+            - "8890:8890"
+        volumes:
+            - ./data:/database/data
+            - ./scripts:/opt/virtuoso-opensource/initdb.d
+        restart: unless-stopped
+        image: openlink/virtuoso-opensource-7:7.2.8
