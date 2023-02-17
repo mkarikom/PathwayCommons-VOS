@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     virtuoso_db:
-        container_name: Virtuoso-7.2.8_PathwayCommons-12
+        container_name: vosgit
         environment:
             - DBA_PASSWORD=dba
             - VIRT_Parameters_ServerThreads=100
@@ -14,8 +14,8 @@ services:
             - VIRT_Parameters_MaxQueryMem=30G
             - VIRT_Parameters_HashJoinSpace=30G
         ports:
-            - "1111:1111"
-            - "8890:8890"
+            - "1118:1111"
+            - "8898:8890"
         volumes:
             - ./data:/database/data
             - ./scripts:/opt/virtuoso-opensource/initdb.d

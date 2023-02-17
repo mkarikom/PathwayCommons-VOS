@@ -1,6 +1,6 @@
 # PathwayCommons v12 on Virtuoso 7
 
-This repository launches a VOS server and populates it with the PathwayCommons (v12) dump.  Modular addition of other graphs (e.g. [NextProt, below](#optional-pre-loading-scripts)) is also supported.  
+This repository launches a VOS server and populates it with the [PathwayCommons](https://www.pathwaycommons.org/) (v12) dump.  Modular addition of other graphs (e.g. [NextProt, below](#optional-pre-loading-scripts)) is also supported.  
 
 ## Installation (Linux)
 1. Edit `docker-compose.yml` with your system parameters.  Users should pay special attention to the following:
